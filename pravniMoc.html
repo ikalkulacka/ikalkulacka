@@ -21,7 +21,7 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
         <div class="container">
-          <a class="navbar-brand" href="/">ikalkulačka</a>
+          <a class="navbar-brand" href="./index.html">ikalkulačka</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -54,20 +54,20 @@
 
           <form id="f" class="needs-validation" novalidate onsubmit="pravniMoc(event)">
             <div class="row mb-3">
-              <label for="datumDoruceni" class="col-sm-4 col-form-label text-end"><b>Datum doručení (připraveno k vyzvednutí)</b></label>
+              <label for="datumDoruceni" class="col-sm-4 col-form-label"><b>Datum doručení (připraveno k vyzvednutí)</b></label>
               <div class="col-sm-3">
                 <input type="date" id="datumDoruceni" name="datumDoruceni" value="" class="form-control" required/>
                 <div class="invalid-feedback">Zadejte prosím datum</div>
               </div>
             </div>
             <div class="row mb-3">
-              <label for="fikce" class="col-sm-4 col-form-label pt-0 text-end"><b>Fikce doručení</b></label>
+              <label for="fikce" class="col-sm-4 col-form-label pt-0"><b>Fikce doručení</b></label>
               <div class="col-sm-8">
                 <input type="checkbox" id="fikce" name="fikce" value="true"  class="form-check-input"/>
               </div>
             </div>
             <fieldset class="row mb-3">
-              <legend class="col-sm-4 col-form-label pt-0 text-end"><b>Lhůta k podání opravného prostředku</b></legend>
+              <legend class="col-sm-4 col-form-label pt-0"><b>Lhůta k podání opravného prostředku</b></legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="lhuta" id="lhuta3" value="3" checked>

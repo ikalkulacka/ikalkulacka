@@ -21,7 +21,7 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
         <div class="container">
-          <a class="navbar-brand" href="/">ikalkulačka</a>
+          <a class="navbar-brand" href="./index.html">ikalkulačka</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -54,7 +54,7 @@
 
           <form id="f" class="needs-validation" novalidate onsubmit="nakladyExekuce(event)">
             <div class="row mb-3">
-              <label for="castka" class="col-sm-3 col-form-label text-end"><b>Výše vymožené částky</b></label>
+              <label for="castka" class="col-sm-3 col-form-label"><b>Výše vymožené částky</b></label>
               <div class="col-sm-3">
                 <div class="input-group">
                   <input type="number" id="castka" name="castka" value="" step="0.01" min="0" class="form-control" required/>
@@ -64,13 +64,13 @@
               </div>
             </div>
             <div class="row mb-3">
-              <label for="do30dnu" class="col-sm-3 col-form-label pt-0 text-end"><b>Zaplaceno do 30 dnů</b></label>
+              <label for="do30dnu" class="col-sm-3 col-form-label pt-0"><b>Zaplaceno do 30 dnů</b></label>
               <div class="col-sm-3">
                 <input type="checkbox" id="do30dnu" name="do30dnu" class="form-check-input"/>
               </div>
             </div>
             <div class="row mb-3">
-              <label for="nahradaVydaju" class="col-sm-3 col-form-label text-end"><b>Náhrada hotových výdajů</b></label>
+              <label for="nahradaVydaju" class="col-sm-3 col-form-label"><b>Náhrada hotových výdajů</b></label>
               <div class="col-sm-3">
                 <div class="input-group">
                   <input type="number" id="nahradaVydaju" name="nahradaVydaju" step="0.01" min="0" value="" class="form-control" placeholder="3500"/>
@@ -79,7 +79,7 @@
               </div>
             </div>
             <div class="row mb-3">
-              <label for="nahradaPosudky" class="col-sm-3 col-form-label text-end"><b>Náhrada za znalecké posudky a překlady</b></label>
+              <label for="nahradaPosudky" class="col-sm-3 col-form-label"><b>Náhrada za znalecké posudky a překlady</b></label>
               <div class="col-sm-3">
                 <div class="input-group">
                   <input type="number" id="nahradaPosudky" name="nahradaPosudky" step="0.01" min="0" value="" class="form-control" required/>
@@ -89,14 +89,14 @@
               </div>
             </div>
             <div class="row mb-3">
-              <label for="ztraceneCtvrthodiny" class="col-sm-3 col-form-label text-end"><b>Počet čtvrthodin ztraceného času</b></label>
+              <label for="ztraceneCtvrthodiny" class="col-sm-3 col-form-label"><b>Počet čtvrthodin ztraceného času</b></label>
               <div class="col-sm-3">
               <input type="number" id="ztraceneCtvrthodiny" name="ztraceneCtvrthodiny" min="0" value="" class="form-control" required/>
               <div class="invalid-feedback">Očekávána celočíselná hodnota</div>
               </div>
             </div>
             <div class="row mb-3">
-              <label for="sazbaDPH" class="col-sm-3 col-form-label text-end"><b>Sazba DPH</b></label>
+              <label for="sazbaDPH" class="col-sm-3 col-form-label"><b>Sazba DPH</b></label>
               <div class="col-sm-3">
                 <div class="input-group">
                   <input type="number" id="sazbaDPH" name="sazbaDPH" min="0" value="" class="form-control" placeholder="21"/>
