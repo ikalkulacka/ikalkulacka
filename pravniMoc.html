@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="cs" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Právní moc a vykonatelnost | Právní kalkulačka</title>
+    <meta name="description" content="Kalkulačka právní moci a vykonatelnosti"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+
+    <style>
+      main > .container {
+        padding: 30px 15px 0;
+      }
+    </style>
+  </head>
+
+  <body class="d-flex flex-column h-100">
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <div class="container">
+          <a class="navbar-brand" href="/">ikalkulačka</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link disabled" id="nav-civil">Civil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" id="nav-trest">Trest</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="nav-exec" href="./nakladyExekuce.html">Exekuce</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" id="nav-pm" href="./pravniMoc.html">Právní moc</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>			
+
+    <main class="flex-shrink-0">
+      <div class="container">
+        <div id="formDiv">
+          <h1>Výpočet data nabytí právní moci</h1>
+
+          <hr class="my-4">
+
+          <form id="f" class="needs-validation" novalidate onsubmit="pravniMoc(event)">
+            <div class="row mb-3">
+              <label for="datumDoruceni" class="col-sm-4 col-form-label text-end"><b>Datum doručení (připraveno k vyzvednutí)</b></label>
+              <div class="col-sm-3">
+                <input type="date" id="datumDoruceni" name="datumDoruceni" value="" class="form-control" required/>
+                <div class="invalid-feedback">Zadejte prosím datum</div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="fikce" class="col-sm-4 col-form-label pt-0 text-end"><b>Fikce doručení</b></label>
+              <div class="col-sm-8">
+                <input type="checkbox" id="fikce" name="fikce" value="true"  class="form-check-input"/>
+              </div>
+            </div>
+            <fieldset class="row mb-3">
+              <legend class="col-sm-4 col-form-label pt-0 text-end"><b>Lhůta k podání opravného prostředku</b></legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lhuta" id="lhuta3" value="3" checked>
+                  <label class="form-check-label" for="lhuta3">3 dny</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lhuta" id="lhuta8" value="8">
+                  <label class="form-check-label" for="lhuta8">8 dnů</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lhuta" id="lhuta15" value="15">
+                  <label class="form-check-label" for="lhuta15">15 dnů</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <hr class="my-4">
+
+            <div class="row mb-3">
+              <div class="col offset-sm-4">
+                <button type="submit" class="btn btn-primary btn">Spočítat datum právní moci</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+        <div id="resultDiv" class="d-none">
+          <h1>Výsledné datum nabytí právní moci</h1>
+          <hr class="my-4">
+          <div id="resultRows">
+          </div>
+          
+          <hr class="my-4">
+
+          <div class="row mb-3">
+            <div class="col offset-sm-4">
+              <button type="button" class="btn btn-primary btn" onclick="zpet()">Zpět na formulář</button>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          const e = document.getElementById('nav-pm');
+          e.classList.add('active');
+          e.setAttribute('aria-current', 'page');
+        </script>
+
+
+      </div> 
+    </main>
+
+    <footer class="footer mt-auto py-2 bg-light">
+      <div class="container">
+        <span class="text-muted"><small>ikalkulacka 2014&ndash;2023</small></span>
+      </div>
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script -->
+    <!-- No Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
